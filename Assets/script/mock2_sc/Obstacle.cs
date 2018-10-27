@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour {
     [SerializeField] GameObject obstacle = null;
+    private float obstacle_life = 5f;
 
 	// Use this for initialization
 	void Start () {
@@ -17,10 +18,17 @@ public class Obstacle : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Bullet")
+
+        if (other.gameObject.tag == "Bullet")
         {
             Debug.Log("Hit!");
-            Destroy(obstacle);
+
+            obstacle_life--;
+        
+            if (obstacle_life <= 0)
+            {
+                Destroy(obstacle);
+            }
         }
     }
 }

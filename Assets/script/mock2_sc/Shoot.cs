@@ -6,7 +6,7 @@ public class Shoot : MonoBehaviour {
     [SerializeField] GameObject bullet = null;
     private float shoot_speed = 1000.0f;
     private float shoot_interval = 0f;
-    const float max_shoot_interval = 0.25f;
+    const float max_shoot_interval = 0.1f;
     const float min_shoot_interval = 0f;
 
 	// Use this for initialization
